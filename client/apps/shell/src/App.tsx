@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql, useLazyLoadQuery } from "react-relay";
 
 import { CounterButton } from "ui";
+import { ShipsList } from "ships";
 
 import { AppQuery } from "./__generated__/AppQuery.graphql";
 import logo from "./logo.svg";
@@ -28,7 +29,9 @@ function App() {
         <h1 className="text-blue-900">Admin</h1>
         
         <CounterButton />
-       
+
+        <ShipsList />
+
         <ul aria-labelledby="m-2">
           {data.ships?.map((ship) => (
             <li className="p-2" key={ship?.id}>{ship?.name}</li>

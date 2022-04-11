@@ -11,43 +11,17 @@
     "dev": "turbo run dev --no-cache --parallel --continue",
     "lint": "turbo run lint",
     "test": "turbo run test",
+    "relay": "relay-compiler",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "turbo": "^1.2.2"
   },
-  "turbo": {
-    "pipeline": {
-      "build": {
-        "outputs": [
-          "dist/**",
-          ".next/**",
-          "public/dist/**"
-        ],
-        "dependsOn": [
-          "^build"
-        ]
-      },
-      "test": {
-        "outputs": [
-          "coverage/**"
-        ],
-        "dependsOn": []
-      },
-      "lint": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": []
-      },
-      "dev": {
-        "cache": false
-      },
-      "clean": {
-        "cache": false
-      }
-    }
-  }
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "yarn@1.22.17"
 }
