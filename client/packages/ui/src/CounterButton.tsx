@@ -1,4 +1,5 @@
 import * as React from "react";
+import { graphql, useLazyLoadQuery } from "react-relay";
 
 export const CounterButton = () => {
   const [count, setCount] = React.useState(0);
